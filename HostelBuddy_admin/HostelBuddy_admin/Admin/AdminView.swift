@@ -47,15 +47,26 @@ struct ComplaintTabView: View {
     @State private var selectedBlock: Blocks = .A
     
     var body: some View {
-        List {
-            Picker("Hostel Block", selection: $selectedBlock) {
-                ForEach(Blocks.allCases) { block in
-                    Text(block.rawValue.capitalized)
+        VStack{
+            
+                
+                List{
+                    Picker("Hostel Block", selection: $selectedBlock) {
+                        ForEach(Blocks.allCases) { block in
+                            Text(block.rawValue.capitalized)
+                        }
+                    }
                 }
-            }
+                .frame(height : 100)
+     
+                
+            IssueListView(block: selectedBlock)
+                
+            
             
             
         }
+        
         
     }
 }
@@ -66,14 +77,20 @@ struct ComplaintTabView: View {
         
         @State private var selectedBlock: Blocks = .A
         var body: some View {
-            List {
-                Picker("Hostel Block", selection: $selectedBlock) {
-                    ForEach(Blocks.allCases) { block in
-                        Text(block.rawValue.capitalized)
+            VStack{
+                List {
+                    Picker("Hostel Block", selection: $selectedBlock) {
+                        ForEach(Blocks.allCases) { block in
+                            Text(block.rawValue.capitalized)
+                        }
                     }
+                    
                 }
+                .frame(height : 100)
                 
+                IssueListView(block: selectedBlock)
             }
+            
         }
     }
     
@@ -81,14 +98,20 @@ struct ComplaintTabView: View {
         
         @State private var selectedBlock: Blocks = .A
         var body: some View {
-            List {
-                Picker("Hostel Block", selection: $selectedBlock) {
-                    ForEach(Blocks.allCases) { block in
-                        Text(block.rawValue.capitalized)
+            VStack{
+                List {
+                    Picker("Hostel Block", selection: $selectedBlock) {
+                        ForEach(Blocks.allCases) { block in
+                            Text(block.rawValue.capitalized)
+                        }
                     }
+                    
                 }
+                .frame(height : 100)
                 
+                IssueListView(block: selectedBlock)
             }
+            
         }
     }
     
@@ -98,13 +121,31 @@ struct ComplaintTabView: View {
         @State private var selectedBlock: Blocks = .A
         
         var body: some View {
-            List {
-                Picker("Hostel Block", selection: $selectedBlock) {
-                    ForEach(Blocks.allCases) { block in
-                        Text(block.rawValue.capitalized)
+            VStack{
+                List {
+                    Picker("Hostel Block", selection: $selectedBlock) {
+                        ForEach(Blocks.allCases) { block in
+                            Text(block.rawValue.capitalized)
+                        }
                     }
+                    
                 }
+                .frame(height : 100)
                 
+                IssueListView(block: selectedBlock)
+            }
+            
+        }
+    }
+    struct IssueListView: View {
+        let block: Blocks
+        
+        var body: some View {
+            List {
+                
+                ForEach(1..<6) { issueIndex in
+                    Text("Issue \(issueIndex) for \(block.rawValue)")
+                }
             }
         }
     }

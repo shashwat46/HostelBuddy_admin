@@ -32,7 +32,7 @@ struct IssueResponse: Identifiable, Codable {
 
 
 class IssueHandler: ObservableObject {
-    @Published var issue: [IssueResponse]?
+    @Published var issue: [IssueResponse] = []
     
     func fetchIssue() {
         guard let url = URL(string: "https://hostelbuddybackend-hgf5.onrender.com/api/getComplaint") else {

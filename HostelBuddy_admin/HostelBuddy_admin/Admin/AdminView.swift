@@ -113,6 +113,9 @@ struct ComplaintTabView: View {
                 
                 IssueListView(block: selectedBlock , selectedIssue: $selectedIssue)
             }
+            .sheet(item: $selectedIssue) { issue in // Present a sheet with issue description
+                IssueDetailView(issue: issue)
+            }
             
         }
     }
@@ -134,6 +137,9 @@ struct ComplaintTabView: View {
                 .frame(height : 100)
                 
                 IssueListView(block: selectedBlock , selectedIssue: $selectedIssue)
+            }
+            .sheet(item: $selectedIssue) { issue in // Present a sheet with issue description
+                IssueDetailView(issue: issue)
             }
             
         }
@@ -158,6 +164,9 @@ struct ComplaintTabView: View {
                 .frame(height : 100)
                 
                 IssueListView(block: selectedBlock , selectedIssue: $selectedIssue)
+            }
+            .sheet(item: $selectedIssue) { issue in // Present a sheet with issue description
+                IssueDetailView(issue: issue)
             }
             
         }

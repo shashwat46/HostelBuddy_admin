@@ -20,7 +20,7 @@ struct ContentView: View {
             }
 
             NavigationView {
-                Text("Hello")
+                HouseKeepingTabView()
                     .navigationBarTitle("House Keeping")
             }
             .tabItem {

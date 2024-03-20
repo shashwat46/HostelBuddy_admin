@@ -11,13 +11,11 @@ import SwiftUI
 struct ComplaintsGet {
     
     static let complaintURL = "https://hostelbuddybackend-hgf5.onrender.com/api/getComplaint"
-    static var responseData: [ComplaintModel] = []
+    static var complaintResponseData: [ComplaintModel] = []
     
     
     static func getComplaints() async throws -> [ComplaintModel] {
-        var urlRequest = URLRequest(url: URL(string: complaintURL)!)
         let url = URL(string: complaintURL)!
-        urlRequest.httpMethod = "GET"
         
         do {
             let (data, response) = try await URLSession.shared.data(from: url)
@@ -27,7 +25,7 @@ struct ComplaintsGet {
             
         } catch {
             print("DEBUG: The Error is: \(error)")
-            return responseData
+            return complaintResponseData
         }
     }
 }

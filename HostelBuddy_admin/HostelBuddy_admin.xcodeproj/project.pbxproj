@@ -17,6 +17,9 @@
 		E33D04F22BAB8CE9003B49AB /* ComplaintModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D04F12BAB8CE9003B49AB /* ComplaintModel.swift */; };
 		E33D04F42BAB8DB7003B49AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D04F32BAB8DB7003B49AB /* ContentView.swift */; };
 		E33D04F62BAB9016003B49AB /* ComplaintTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D04F52BAB9016003B49AB /* ComplaintTabView.swift */; };
+		E33D04FA2BAB9D0B003B49AB /* HousekeepingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D04F92BAB9D0B003B49AB /* HousekeepingModel.swift */; };
+		E33D04FC2BAB9D29003B49AB /* HousekeepingGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D04FB2BAB9D29003B49AB /* HousekeepingGet.swift */; };
+		E33D04FF2BAB9D49003B49AB /* HousekeepingTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D04FE2BAB9D49003B49AB /* HousekeepingTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,9 @@
 		E33D04F12BAB8CE9003B49AB /* ComplaintModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintModel.swift; sourceTree = "<group>"; };
 		E33D04F32BAB8DB7003B49AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E33D04F52BAB9016003B49AB /* ComplaintTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintTabView.swift; sourceTree = "<group>"; };
+		E33D04F92BAB9D0B003B49AB /* HousekeepingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousekeepingModel.swift; sourceTree = "<group>"; };
+		E33D04FB2BAB9D29003B49AB /* HousekeepingGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousekeepingGet.swift; sourceTree = "<group>"; };
+		E33D04FE2BAB9D49003B49AB /* HousekeepingTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousekeepingTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,7 @@
 		6BD5A2962BA9C8C400FD25A6 /* Admin */ = {
 			isa = PBXGroup;
 			children = (
+				E33D04F82BAB9CEC003B49AB /* HouseKeeping */,
 				E33D04F72BAB9047003B49AB /* Complaints */,
 				6BD5A2972BA9C8E100FD25A6 /* AdminView.swift */,
 				6BD5A2992BA9C8F200FD25A6 /* AdminHandler.swift */,
@@ -99,6 +106,16 @@
 				E33D04F52BAB9016003B49AB /* ComplaintTabView.swift */,
 			);
 			path = Complaints;
+			sourceTree = "<group>";
+		};
+		E33D04F82BAB9CEC003B49AB /* HouseKeeping */ = {
+			isa = PBXGroup;
+			children = (
+				E33D04F92BAB9D0B003B49AB /* HousekeepingModel.swift */,
+				E33D04FB2BAB9D29003B49AB /* HousekeepingGet.swift */,
+				E33D04FE2BAB9D49003B49AB /* HousekeepingTabView.swift */,
+			);
+			path = HouseKeeping;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,8 +193,11 @@
 				E33D04F62BAB9016003B49AB /* ComplaintTabView.swift in Sources */,
 				E33D04F42BAB8DB7003B49AB /* ContentView.swift in Sources */,
 				6B69BD322BAB6C2E0039F7B0 /* AdminModel.swift in Sources */,
+				E33D04FC2BAB9D29003B49AB /* HousekeepingGet.swift in Sources */,
 				E33D04F02BAB8C08003B49AB /* ComplaintsGet.swift in Sources */,
 				6BD5A2892BA9C79A00FD25A6 /* HostelBuddy_adminApp.swift in Sources */,
+				E33D04FA2BAB9D0B003B49AB /* HousekeepingModel.swift in Sources */,
+				E33D04FF2BAB9D49003B49AB /* HousekeepingTabView.swift in Sources */,
 				6BD5A2982BA9C8E100FD25A6 /* AdminView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

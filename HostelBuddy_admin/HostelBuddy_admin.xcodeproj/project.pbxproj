@@ -13,6 +13,10 @@
 		6BD5A2902BA9C79E00FD25A6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BD5A28F2BA9C79E00FD25A6 /* Preview Assets.xcassets */; };
 		6BD5A2982BA9C8E100FD25A6 /* AdminView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD5A2972BA9C8E100FD25A6 /* AdminView.swift */; };
 		6BD5A29A2BA9C8F200FD25A6 /* AdminHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD5A2992BA9C8F200FD25A6 /* AdminHandler.swift */; };
+		E33D04F02BAB8C08003B49AB /* ComplaintsGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D04EF2BAB8C08003B49AB /* ComplaintsGet.swift */; };
+		E33D04F22BAB8CE9003B49AB /* ComplaintModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D04F12BAB8CE9003B49AB /* ComplaintModel.swift */; };
+		E33D04F42BAB8DB7003B49AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D04F32BAB8DB7003B49AB /* ContentView.swift */; };
+		E33D04F62BAB9016003B49AB /* ComplaintTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D04F52BAB9016003B49AB /* ComplaintTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +27,10 @@
 		6BD5A28F2BA9C79E00FD25A6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6BD5A2972BA9C8E100FD25A6 /* AdminView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminView.swift; sourceTree = "<group>"; };
 		6BD5A2992BA9C8F200FD25A6 /* AdminHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminHandler.swift; sourceTree = "<group>"; };
+		E33D04EF2BAB8C08003B49AB /* ComplaintsGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintsGet.swift; sourceTree = "<group>"; };
+		E33D04F12BAB8CE9003B49AB /* ComplaintModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintModel.swift; sourceTree = "<group>"; };
+		E33D04F32BAB8DB7003B49AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E33D04F52BAB9016003B49AB /* ComplaintTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,11 +82,23 @@
 		6BD5A2962BA9C8C400FD25A6 /* Admin */ = {
 			isa = PBXGroup;
 			children = (
+				E33D04F72BAB9047003B49AB /* Complaints */,
 				6BD5A2972BA9C8E100FD25A6 /* AdminView.swift */,
 				6BD5A2992BA9C8F200FD25A6 /* AdminHandler.swift */,
 				6B69BD312BAB6C2E0039F7B0 /* AdminModel.swift */,
+				E33D04F32BAB8DB7003B49AB /* ContentView.swift */,
 			);
 			path = Admin;
+			sourceTree = "<group>";
+		};
+		E33D04F72BAB9047003B49AB /* Complaints */ = {
+			isa = PBXGroup;
+			children = (
+				E33D04F12BAB8CE9003B49AB /* ComplaintModel.swift */,
+				E33D04EF2BAB8C08003B49AB /* ComplaintsGet.swift */,
+				E33D04F52BAB9016003B49AB /* ComplaintTabView.swift */,
+			);
+			path = Complaints;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,7 +172,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BD5A29A2BA9C8F200FD25A6 /* AdminHandler.swift in Sources */,
+				E33D04F22BAB8CE9003B49AB /* ComplaintModel.swift in Sources */,
+				E33D04F62BAB9016003B49AB /* ComplaintTabView.swift in Sources */,
+				E33D04F42BAB8DB7003B49AB /* ContentView.swift in Sources */,
 				6B69BD322BAB6C2E0039F7B0 /* AdminModel.swift in Sources */,
+				E33D04F02BAB8C08003B49AB /* ComplaintsGet.swift in Sources */,
 				6BD5A2892BA9C79A00FD25A6 /* HostelBuddy_adminApp.swift in Sources */,
 				6BD5A2982BA9C8E100FD25A6 /* AdminView.swift in Sources */,
 			);

@@ -14,7 +14,7 @@ struct HousekeepingGet {
     static var housekeepingResponseData: [HousekeepingModel] = []
     
     
-    static func getComplaints() async throws -> [HousekeepingModel] {
+    static func getRoomComplaints() async throws -> [HousekeepingModel] {
         let url = URL(string: housekeepingURL)!
         
         do {

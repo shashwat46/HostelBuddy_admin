@@ -1,5 +1,5 @@
 //
-//  HousekeepingTabView.swift
+//  HarassmentTabView.swift
 //  HostelBuddy_admin
 //
 //  Created by shikhar on 21/03/24.
@@ -7,38 +7,36 @@
 
 import SwiftUI
 
-struct HouseKeepingTabView: View {
-    
-    @State private var data = HousekeepingGet.housekeepingResponseData
+struct HarassmentTabView: View {
+    @State private var data = HarassmentGet.harassmentResponseData
 
     var body: some View {
-        
-        List(data, id:\.self) { info in
+        List(data, id:\.self){ info in
             VStack(alignment: .leading){
                 
                 Text("Name: -\(info.name)")
                 Text("Room No: - \(info.roomNo)")
                 Text("Reg No: - \(info.regNo)")
                 Text("Block: - \(info.selectedBlock)")
-                Text("Preferred Date: - \(info.date)")
-                Text("Preferred Time: - \(info.time)")
+                Text("Description: - \(info.description)")
                 
             }
         }
         .onAppear(perform: {
             Task {
-                data = try await HousekeepingGet.getRoomComplaints()
+                data = try await HarassmentGet.getHarassmentComplaints()
             }
         })
         .refreshable {
             Task {
-                data = try await HousekeepingGet.getRoomComplaints()
+                data = try await HarassmentGet.getHarassmentComplaints()
             }
         }
 
     }
 }
 
+
 //#Preview {
-//    HousekeepingTabView()
+//    HarassmentTabView()
 //}

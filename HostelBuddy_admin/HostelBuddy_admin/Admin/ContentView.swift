@@ -27,22 +27,22 @@ struct ContentView: View {
                 Image(systemName: "trash")
                 Text("House Keeping")
             }
-//            NavigationView {
-//                MessComplaintTabView()
-//                    .navigationBarTitle("Mess Complaints")
-//            }
-//            .tabItem {
-//                Image(systemName: "fork.knife.circle")
-//                Text("Mess Complaints")
-//            }
-//            NavigationView {
-//                HarassmentTabView()
-//                    .navigationBarTitle("Harassment")
-//            }
-//            .tabItem {
-//                Image(systemName: "exclamationmark.triangle")
-//                Text("Harassment")
-//            }
+            NavigationView {
+                MessComplaintTabView()
+                    .navigationBarTitle("Mess Complaints")
+            }
+            .tabItem {
+                Image(systemName: "fork.knife.circle")
+                Text("Mess Complaints")
+            }
+            NavigationView {
+                HarassmentTabView()
+                    .navigationBarTitle("Harassment")
+            }
+            .tabItem {
+                Image(systemName: "exclamationmark.triangle")
+                Text("Harassment")
+            }
         }
     }
 }

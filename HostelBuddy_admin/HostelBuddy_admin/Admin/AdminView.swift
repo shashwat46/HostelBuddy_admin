@@ -12,32 +12,53 @@ enum Blocks: String, CaseIterable, Identifiable {
     var id: Self { self }
 }
 
+struct Issue: Identifiable {
+    let id: Int
+    let title: String
+    let description: String
+    let block: Blocks
+}
+
+
 struct AdminView: View {
     
     
     var body: some View {
         TabView {
-            ComplaintTabView()
-                .tabItem {
-                    Image(systemName: "note")
-                    Text("Complaints")
+            NavigationView {
+                    ComplaintTabView()
+                    .navigationBarTitle("Complaints")
+            }
+            .tabItem {
+                Image(systemName: "note")
+                Text("Complaints")
                 }
-            HouseKeepingTabView()
+            NavigationView {
+                HouseKeepingTabView()
+                .navigationBarTitle("House Keeping")
+                       }
                 .tabItem {
                     Image(systemName: "trash")
-                    Text("House Keeping")
-                }
-            MessComplaintTabView()
-                .tabItem{
-                    Image(systemName: "fork.knife.circle")
-
-                    Text("Mess Complaints")
-                }
-            HarassmentTabView()
+                        Text("House Keeping")
+                       }
+                       
+            NavigationView {
+                MessComplaintTabView()
+                .navigationBarTitle("Mess Complaints") // Title for the tab
+                       }
                 .tabItem {
-                    Image(systemName: "exclamationmark.triangle")
-                    Text("Harasssment")
-                }
+                    Image(systemName: "fork.knife.circle")
+                        Text("Mess Complaints")
+                    }
+                       
+                    NavigationView {
+                        HarassmentTabView()
+                               .navigationBarTitle("Harassment") // Title for the tab
+                    }
+                       .tabItem {
+                           Image(systemName: "exclamationmark.triangle")
+                           Text("Harasssment")
+                       }
         }
     }
 }
@@ -45,6 +66,7 @@ struct AdminView: View {
 struct ComplaintTabView: View {
     
     @State private var selectedBlock: Blocks = .A
+    @State private var selectedIssue: Issue? = nil
     
     var body: some View {
         VStack{
@@ -60,22 +82,23 @@ struct ComplaintTabView: View {
                 .frame(height : 100)
      
                 
-            IssueListView(block: selectedBlock)
+            IssueListView(block: selectedBlock , selectedIssue: $selectedIssue)
                 
-            
-            
-            
         }
-        
+        .sheet(item: $selectedIssue) { issue in // Present a sheet with issue description
+            IssueDetailView(issue: issue)
+        }
         
     }
 }
+
 
     
     
     struct HouseKeepingTabView: View {
         
         @State private var selectedBlock: Blocks = .A
+        @State private var selectedIssue: Issue? = nil
         var body: some View {
             VStack{
                 List {
@@ -88,7 +111,7 @@ struct ComplaintTabView: View {
                 }
                 .frame(height : 100)
                 
-                IssueListView(block: selectedBlock)
+                IssueListView(block: selectedBlock , selectedIssue: $selectedIssue)
             }
             
         }
@@ -97,6 +120,7 @@ struct ComplaintTabView: View {
     struct MessComplaintTabView: View {
         
         @State private var selectedBlock: Blocks = .A
+        @State private var selectedIssue: Issue? = nil
         var body: some View {
             VStack{
                 List {
@@ -109,7 +133,7 @@ struct ComplaintTabView: View {
                 }
                 .frame(height : 100)
                 
-                IssueListView(block: selectedBlock)
+                IssueListView(block: selectedBlock , selectedIssue: $selectedIssue)
             }
             
         }
@@ -119,6 +143,7 @@ struct ComplaintTabView: View {
     struct HarassmentTabView: View {
         
         @State private var selectedBlock: Blocks = .A
+        @State private var selectedIssue: Issue? = nil
         
         var body: some View {
             VStack{
@@ -132,23 +157,46 @@ struct ComplaintTabView: View {
                 }
                 .frame(height : 100)
                 
-                IssueListView(block: selectedBlock)
+                IssueListView(block: selectedBlock , selectedIssue: $selectedIssue)
             }
             
         }
     }
     struct IssueListView: View {
         let block: Blocks
+        @Binding var selectedIssue: Issue? // Binding to track the selected issue
         
         var body: some View {
-            List {
-                
+            ScrollView {
                 ForEach(1..<6) { issueIndex in
-                    Text("Issue \(issueIndex) for \(block.rawValue)")
+                    Button(action: {
+                        self.selectedIssue = Issue(id: issueIndex, title: "Issue \(issueIndex)", description: "Description for Issue \(issueIndex) in \(block.rawValue)", block: self.block)
+                    }) {
+                        Text("Issue \(issueIndex) for \(block.rawValue)")
+                    }
                 }
             }
         }
     }
+    struct IssueDetailView: View {
+        let issue: Issue
+        
+        var body: some View {
+            VStack {
+                Text(issue.title)
+                    .font(.title)
+                    .padding()
+                
+                Text(issue.description)
+                    .font(.body)
+                    .padding()
+                
+                Spacer()
+            }
+            .navigationBarTitle(issue.title)
+        }
+    }
+
     
     struct Previews: PreviewProvider {
         static var previews: some View {

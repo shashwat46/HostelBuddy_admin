@@ -11,7 +11,7 @@ import SwiftUI
 struct HostelBuddy_adminApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AdminView()
         }
     }
 }
